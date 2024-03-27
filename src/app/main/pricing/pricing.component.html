@@ -1,0 +1,595 @@
+<section
+  class="w-full max-w-[1280px] px-[32px] flex mob:px-[16px] flex-col mx-auto mob:mt-[64px]"
+>
+  <div class="max-w-[768px] gap-[12px] flex flex-col">
+    <span class="text-[#7F56D9] text-[16px] font-semibold">Pricing</span>
+    <h1 class="text-[#101828] text-[48px] text-start font-semibold mb-[12px]">
+      Simple, transparent pricing
+    </h1>
+    <p class="text-[#475467] text-[20px] text-start">
+      We believe Untitled should be accessible to all companies, no matter the
+      size.
+    </p>
+  </div>
+  <div
+    class="flex justify-center gap-x-[32px] gap-y-[16px] flex-wrap pricing-cards mt-[96px] mob:mt-[64px]"
+  >
+    <div
+      class="card flex justify-content-center relative"
+      *ngFor="let item of cardsData; let first = first"
+    >
+      <div
+        class="absolute top-[-25px] right-[-55px] mob:right-0 flex items-start gap-[12px]"
+        *ngIf="first"
+      >
+        <img [src]="iconPath + 'arrow.svg'" />
+        <span class="translate-y-[-10px] text-[#6941C6] font-medium"
+          >Most popular!</span
+        >
+      </div>
+      <p-card
+        [style]="{
+          'box-shadow': '0px 12px 16px -4px #10182814',
+          border: '1px solid #EAECF0',
+          padding: '40px 32px 32px 32px',
+          'border-radius': '16px'
+        }"
+        class="w-[384px] mob:w-[343px]"
+      >
+        <ng-template pTemplate="header">
+          <div class="flex flex-col items-center">
+            <h2 class="text-[#101828] text-[48px] text-center font-semibold">
+              {{ item.price }}
+            </h2>
+            <p class="text-[#101828] text-[20px] text-center font-semibold">
+              {{ item.paragraph }}
+            </p>
+            <span class="text-[#475467] text-center text-[16px]">{{
+              item.subHeader
+            }}</span>
+          </div>
+        </ng-template>
+        <div>
+          <ul class="flex flex-col gap-[16px]">
+            <li class="flex gap-[12px]" *ngFor="let liItem of item.priorities">
+              <div
+                class="size-[24px] rounded-full bg-[#D1FADF] flex justify-center items-center"
+              >
+                <i
+                  class="pi pi-check"
+                  style="color: #12b76a; font-size: 10px"
+                ></i>
+              </div>
+              <span>{{ liItem }}</span>
+            </li>
+          </ul>
+        </div>
+        <ng-template pTemplate="footer">
+          <div class="card flex justify-content-center h-[48px]">
+            <p-button
+              class="w-full h-full"
+              [style]="{
+                width: '100%',
+                'background-color': '#7F56D9',
+                height: '100%',
+                color: '#FFFFFF',
+                'font-size': '16px',
+                'font-weight': '600',
+                'box-shadow': 'none',
+                outline: 'none'
+              }"
+              label="Get started"
+            ></p-button>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</section>
+<section class="w-full mt-[96px] bg-[#F9FAFB] py-[96px]">
+  <div
+    class="px-[32px] flex mob:px-[16px] flex-col w-full max-w-[1280px] mx-auto"
+  >
+    <div class="max-w-[768px] gap-[12px] flex flex-col">
+      <span class="text-[#7F56D9] text-[16px] font-semibold">Features</span>
+      <h1 class="text-[#101828] text-[36px] text-start font-semibold mb-[8px]">
+        Beautiful analytics to grow smarter
+      </h1>
+      <p class="text-[#475467] text-[20px] text-start">
+        Powerful, self-serve product and growth analytics to help you convert,
+        engage, and retain more users. Trusted by over 4,000 startups.
+      </p>
+    </div>
+    <div
+      class="flex flex-wrap gap-x-[32px] gap-y-[64px] mob:gap-y-[48px] mt-[64px] pricing-cards second"
+    >
+      <ng-container *ngFor="let cardItem of cards; let i = index">
+        <div class="card flex justify-content-center">
+          <p-card
+            [header]="cardItem.header"
+            [style]="{
+              width: '100%',
+              'max-width': '384px',
+              'box-shadow': 'none',
+              'border-radius': '0',
+              'text-align': 'start',
+              background: 'transparent',
+              'font-size': '20px'
+            }"
+          >
+            <ng-template pTemplate="header">
+              <div
+                class="w-[48px] h-[48px] rounded-full bg-[#F4EBFF] border-[8px] border-solid border-[#F9F5FF] flex justify-center items-center"
+              >
+                <i
+                  class="pi"
+                  [ngClass]="cardItem.icon"
+                  style="color: #7f56d9"
+                ></i>
+              </div>
+            </ng-template>
+            <div class="flex flex-col gap-[20px]">
+              <p class="text-[#475467] text-[16px]">
+                {{ cardItem.desc }}
+              </p>
+              <div class="flex gap-[4px] items-center cursor-pointer">
+                <span class="text-[#6941C6] font-semibold text-[16px]"
+                  >Learn more</span
+                ><i
+                  class="pi pi-arrow-right"
+                  [style]="{ color: '#6941C6' }"
+                ></i>
+              </div>
+            </div>
+          </p-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+<section
+  class="w-full max-w-[1280px] px-[32px] flex mob:px-[16px] flex-col mx-auto mt-[96px] mob:mt-[64px]"
+>
+  <div class="max-w-[768px] gap-[12px] flex flex-col">
+    <h1 class="text-[#101828] text-[36px] text-start font-semibold mb-[8px]">
+      FAQs
+    </h1>
+    <p class="text-[#475467] text-[20px] text-start">
+      Everything you need to know about the product and billing. Can’t find the
+      answer you’re looking for? Please
+      <a class="underline cursor-pointer">chat to our friendly team</a>.
+    </p>
+  </div>
+  <div
+    class="mt-[64px] mob:mt-[48px] flex flex-wrap gap-x-[32px] gap-y-[64px] mob:gap-y-[40px]"
+  >
+    <div
+      class="w-[384px] mob:w-[343px] flex flex-col gap-[8px]"
+      *ngFor="let item of data"
+    >
+      <p class="text-[#101828] text-[18px] font-semibold">{{ item.header }}</p>
+      <span class="text-[#475467] text-[16px]">{{ item.desc }}</span>
+    </div>
+  </div>
+  <div
+    class="bg-[#F9FAFB] w-full flex mob:flex-col p-[32px] rounded-2xl items-start justify-between gap-y-[24px] mt-[64px] mob:mt-[48px]"
+  >
+    <div class="flex flex-col gap-[8px]">
+      <h4 class="text-[20px] text-[#101828] font-medium">
+        Still have questions?
+      </h4>
+      <p class="text-[18px] text-[#475467]">
+        Can’t find the answer you’re looking for? Please chat to our friendly
+        team.
+      </p>
+    </div>
+    <p-button
+      class="inline-block border border-solid border-[#7F56D9] rounded-lg"
+      size="large"
+      [style]="{
+        'background-color': '#7F56D9',
+        height: '100%',
+        padding: '10px 18px',
+        outline: 'none',
+        'box-shadow': 'none',
+        color: '#FFFFFF',
+        'font-size': '16px',
+        'font-weight': '600',
+        width: 'max-content'
+      }"
+      label="Get in touch"
+    ></p-button>
+  </div>
+</section>
+<section
+  class="w-full max-w-[1280px] px-[32px] flex mob:px-[16px] flex-col mx-auto mt-[96px] mob:mt-[64px]"
+>
+  <div class="flex justify-between">
+    <h1 class="text-[#101828] text-[30px] font-semibold">Customers</h1>
+    <div>
+      <p-button
+        class="inline-block mr-3 border border-solid border-[#D0D5DD] rounded-lg"
+        icon="pi pi-cloud-upload"
+        [style]="{
+          'background-color': 'transparent',
+          padding: '10px 16px',
+          outline: 'none',
+          color: '#344054',
+          height: '100%',
+          'font-size': '14px',
+          'font-weight':'600',
+          border: '1px solid #D0D5DD',
+          'box-shadow': '0px 1px 2px 0px #1018280D',
+        }"
+        label="Import"
+      ></p-button>
+      <p-button
+        class="inline-block mr-3 border border-solid border-[#D0D5DD] rounded-lg"
+        icon="pi pi-plus"
+        [style]="{
+          'background-color': '#7F56D9',
+          padding: '10px 16px',
+          outline: 'none',
+          color: '#FFFFFF',
+          height: '100%',
+          'font-size': '14px',
+          'font-weight':'600',
+          'box-shadow': '0px 1px 2px 0px #1018280D',
+          border: '1px solid #7F56D9',
+        }"
+        label="Add customer"
+      ></p-button>
+    </div>
+  </div>
+  <div class="flex gap-x-[64px] h-[288px] mt-[34px]">
+    <div class="w-[240px] flex flex-col">
+      <div
+        class="flex justify-between pb-[20px] border-b border-solid border-[#EAECF0]"
+      >
+        <span class="text-[#101828] text-[18px] font-semibold">Active now</span>
+        <div class="dots">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="flex-grow">
+        <div class="relative flex justify-center items-center w-full h-full">
+          <div class="absolute w-full h-full top-0 left-0 z-[40]"></div>
+          <span
+            class="text-[#101828] text-[30px] font-semibold translate-x-[-5px] z-[50]"
+            >316</span
+          >
+          <div
+            class="card flex justify-content-center absolute top-[40px] left-[40px]"
+          >
+            <p-chart
+              [style]="{
+                width: '144px',
+                height: '144px'
+              }"
+              type="doughnut"
+              [data]="testData[0]"
+              [options]="testOptions"
+            ></p-chart>
+          </div>
+          <div
+            class="card flex justify-content-center absolute top-[20px] left-[20px]"
+          >
+            <p-chart
+              [style]="{
+                width: '184px',
+                height: '184px'
+              }"
+              type="doughnut"
+              [data]="testData[1]"
+              [options]="testOptions"
+            ></p-chart>
+          </div>
+          <div class="card flex justify-content-center absolute top-0 left-0">
+            <p-chart
+              [style]="{
+                width: '224px',
+                height: '224px'
+              }"
+              type="doughnut"
+              [data]="testData[2]"
+              [options]="testOptions"
+            ></p-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-grow">
+      <div
+        class="flex justify-between pb-[20px] border-b border-solid border-[#EAECF0]"
+      >
+        <span class="text-[#101828] text-[18px] font-semibold"
+          >Total customers</span
+        >
+        <div class="dots">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="pricing-chart">
+        <div class="card">
+          <p-chart type="line" [data]="chartData" [options]="options"></p-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card pricing-table mt-[32px]">
+    <p-table
+      [value]="products"
+      [(selection)]="selectedProducts"
+      editMode="row"
+      dataKey="company"
+      [tableStyle]="{ 'min-width': '50rem' }"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 4rem">
+            <p-tableHeaderCheckbox
+              [style]="{
+                'background-color': '#F9F5FF',
+                'border-radius': '6px'
+              }"
+            ></p-tableHeaderCheckbox>
+          </th>
+          <th pSortableColumn="company">
+            <div class="flex gap-[4px]">
+              <span>Company</span> <p-sortIcon field="company"></p-sortIcon>
+            </div>
+          </th>
+          <th>Status</th>
+          <th>About</th>
+          <th>Users</th>
+          <th>License use</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template
+        pTemplate="body"
+        let-editing="editing"
+        let-ri="rowIndex"
+        let-product
+      >
+        <tr [pEditableRow]="product">
+          <td>
+            <p-tableCheckbox [value]="product"></p-tableCheckbox>
+          </td>
+          <td>
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <div class="flex flex-col gap-[8px]">
+                  <input
+                    pInputText
+                    [style]="{
+                      border: '1px solid black'
+                    }"
+                    type="text"
+                    [(ngModel)]="product.company"
+                  />
+                  <input
+                    pInputText
+                    [style]="{
+                      border: '1px solid black'
+                    }"
+                    type="text"
+                    [(ngModel)]="product.companySubName"
+                  />
+                </div>
+              </ng-template>
+              <ng-template pTemplate="output">
+                <div class="flex gap-x-[12px]">
+                  <img [src]="imagePath + product.companyLogo" alt="" />
+                  <div class="flex flex-col">
+                    <span class="text-[#101828] font-medium">{{
+                      product.company
+                    }}</span>
+                    <span class="text-[#475467]">{{
+                      product.companySubName
+                    }}</span>
+                  </div>
+                </div>
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td>
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <p-dropdown
+                  [options]="statuses"
+                  appendTo="body"
+                  [(ngModel)]="product.status.label"
+                  [style]="{ width: '100%', border: '1px solid black' }"
+                ></p-dropdown>
+              </ng-template>
+              <ng-template pTemplate="output">
+                <div
+                  class="px-[8px] py-[2px] w-fit rounded-2xl"
+                  [ngStyle]="{
+                    'background-color':
+                      product.status.label === 'Customer'
+                        ? '#ECFDF3'
+                        : '#F2F4F7',
+                    color:
+                      product.status.label === 'Customer'
+                        ? '#027A48'
+                        : '#344054'
+                  }"
+                >
+                  {{ product.status.label }}
+                </div>
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td>
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <div class="flex flex-col gap-[8px]">
+                  <input
+                    pInputText
+                    [style]="{
+                      border: '1px solid black'
+                    }"
+                    type="text"
+                    [(ngModel)]="product.about"
+                  />
+                  <input
+                    pInputText
+                    [style]="{
+                      border: '1px solid black'
+                    }"
+                    type="text"
+                    [(ngModel)]="product.aboutSubContent"
+                  />
+                </div>
+              </ng-template>
+              <ng-template pTemplate="output">
+                <div class="flex flex-col">
+                  <span class="text-[#101828]">{{ product.about }}</span>
+                  <span class="text-[#475467]">{{
+                    product.aboutSubContent
+                  }}</span>
+                </div>
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td>
+            <div
+              class="flex relative"
+              [ngStyle]="{ 'min-width': product.users.length * 24 + 'px' }"
+            >
+              <img
+                [ngStyle]="{
+                  left: i * 22 + 'px',
+                  'background-color': item.background,
+                  outline: '2px solid #FFFFFF'
+                }"
+                class="size-[24px] rounded-full absolute bottom-0 translate-y-[50%]"
+                *ngFor="let item of product.users; let i = index"
+                [src]="imagePath + item.img"
+                alt=""
+              />
+            </div>
+          </td>
+          <td>
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <input
+                  pInputText
+                  [style]="{
+                    border: '1px solid black'
+                  }"
+                  type="text"
+                  [(ngModel)]="product.license"
+                />
+              </ng-template>
+              <ng-template pTemplate="output">
+                <p-progressBar
+                  [style]="{
+                    height: '8px'
+                  }"
+                  [value]="product.license"
+                  [showValue]="false"
+                ></p-progressBar>
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td>
+            <div class="flex align-items-center justify-content-center gap-2">
+              <button
+                *ngIf="!editing"
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-trash"
+                class="p-button-rounded p-button-text"
+                (click)="selectedProduct = product; showDelete = true"
+              ></button>
+              <button
+                *ngIf="!editing"
+                pButton
+                pRipple
+                type="button"
+                pInitEditableRow
+                icon="pi pi-pencil"
+                (click)="onRowEditInit(product)"
+                class="p-button-rounded p-button-text"
+              ></button>
+              <button
+                *ngIf="editing"
+                pButton
+                pRipple
+                type="button"
+                pSaveEditableRow
+                icon="pi pi-check"
+                (click)="onRowEditSave(product)"
+                class="p-button-rounded p-button-text p-button-success mr-2"
+              ></button>
+              <button
+                *ngIf="editing"
+                pButton
+                pRipple
+                type="button"
+                pCancelEditableRow
+                icon="pi pi-times"
+                (click)="onRowEditCancel(product, ri)"
+                class="p-button-rounded p-button-text p-button-danger"
+              ></button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</section>
+
+<div
+  class="flex justify-center items-center bg-[rgba(208,213,221,0.4)] w-full h-[100dvh] fixed top-0 left-0 z-50"
+  *ngIf="showDelete && selectedProduct"
+>
+  <div
+    class="rounded-lg bg-[#FFFFFF] w-full max-w-[520px] min-h-[150px] flex flex-col justify-between p-[24px]"
+  >
+    <h4 class="text-center">Are you sure want to delete this item?</h4>
+    <div class="flex gap-[12px] w-full justify-center">
+      <p-button
+        (onClick)="showDelete = false; selectedProduct = null"
+        class="inline-block mr-3 border border-solid border-[#D0D5DD] rounded-lg"
+        [style]="{
+        'background-color': 'transparent',
+        padding: '10px 16px',
+        outline: 'none',
+        color: '#344054',
+        height: '100%',
+        'font-size': '14px',
+        'font-weight':'600',
+        border: '1px solid #D0D5DD',
+        'box-shadow': '0px 1px 2px 0px #1018280D',
+      }"
+        label="Cancel"
+      ></p-button>
+      <p-button
+        (onClick)="onRowDelete(selectedProduct)"
+        class="inline-block mr-3 border border-solid border-[#D0D5DD] rounded-lg"
+        icon="pi pi-trash"
+        [style]="{
+        'background-color': '#ef4444',
+        padding: '10px 16px',
+        outline: 'none',
+        color: '#FFFFFF',
+        height: '100%',
+        'font-size': '14px',
+        'font-weight':'600',
+        'box-shadow': '0px 1px 2px 0px #1018280D',
+        border: '1px solid #ef4444',
+      }"
+        label="Delete"
+      ></p-button>
+    </div>
+  </div>
+</div>

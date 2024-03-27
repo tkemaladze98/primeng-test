@@ -1,0 +1,162 @@
+/* You can add global styles to this file, and also import other style files */
+/* @tailwind base;
+@tailwind components; */
+@import "primeicons/primeicons.css";
+@import "variable";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.country-dropdown {
+  .p-dropdown .p-dropdown-trigger {
+    width: fit-content;
+  }
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.hidden-scrollbar {
+  scrollbar-width: none;
+  scrollbar-color: transparent;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+  }
+}
+
+.home-cards {
+  .p-card-body {
+    padding: 0;
+    margin-top: 20px;
+    .p-card-title {
+      font-size: 20px;
+      color: #101828;
+    }
+    .p-card-content {
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 880px) {
+    .p-card {
+      max-width: 324px !important;
+    }
+  }
+}
+
+.pricing-cards {
+  .p-card-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &.second {
+    .p-card-body {
+      padding-bottom: 0;
+      .p-card-content {
+        padding-bottom: 0;
+      }
+      .p-card-title {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.home-accordion {
+  .last-child {
+    border-bottom: none;
+    .p-accordion-tab {
+      border-bottom: none;
+    }
+  }
+  .p-accordion-tab {
+    border-bottom: 1px solid #eaecf0;
+    .p-accordion-header-link {
+      background-color: transparent;
+    }
+    .p-accordion-toggle-icon {
+      display: none;
+    }
+    .p-accordion-content {
+      padding-top: 0;
+    }
+    .more,
+    .less {
+      background-color: transparent;
+      border: 2px solid #7f56d9;
+      color: #7f56d9;
+      line-height: unset;
+      font-size: 16px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      margin-left: auto;
+      justify-content: center;
+      align-items: center;
+    }
+    .more {
+      display: flex;
+    }
+    .less {
+      display: none;
+    }
+  }
+  .p-accordion-tab-active {
+    .less {
+      display: flex !important;
+    }
+    .more {
+      display: none !important;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navigation-button .p-button {
+    padding: 10px 10px !important;
+  }
+}
+
+.pricing-chart {
+  canvas {
+    height: 240px !important;
+    width: 100% !important;
+  }
+}
+
+.pricing-table {
+  border: 1px solid #EAECF0;
+  border-radius: 8px;
+  .p-datatable-wrapper{
+    border-radius: 8px;
+
+  }
+  .p-checkbox-box{
+    border :2px solid #7f56d9!important;
+  }
+  .p-highlight {
+    background: #ffffff !important;
+    color: #7f56d9 !important;
+    .p-icon-wrapper svg {
+      color: #7F56D9!important;
+    }
+  }
+  .p-datatable-thead {
+   border-bottom: 1px solid #EAECF0;
+  }
+  .p-progressbar-value{
+    background-color: #7F56D9!important;
+  }
+}

@@ -1,0 +1,131 @@
+<section
+  class="w-full max-w-[1280px] px-[32px] flex gap-[64px] mob:flex-wrap mob:px-[16px] pb-[96px] mob:pb-0"
+>
+  <div class="flex-grow w-[50%] px-[48px] py-[41px] flex-col mob:px-0">
+    <div class="flex flex-col gap-[20px] mb-[48px]">
+      <h2 class="text-[#101828] text-[36px] font-semibold">Get in touch</h2>
+      <p class="text-[#475467] text-[20px]">
+        Our friendly team would love to hear from you.
+      </p>
+    </div>
+    <div class="flex gap-[32px] w-full justify-between flex-wrap">
+      <div class="flex flex-column gap-2 font-medium flex-grow">
+        <label class="text-[#344054] text-[14px]" for="username"
+          >First name</label
+        >
+        <input
+          class="border border-solid border-[#D0D5DD] rounded-lg py-[12px] px-[16px] shadow-none text-[16px] max-w-[224px] mob:max-w-[unset]"
+          pInputText
+          placeholder="First name"
+          id="firstName"
+          aria-describedby="firstName-help"
+          [(ngModel)]="formValues.firstName"
+        />
+      </div>
+      <div class="flex flex-column gap-2 font-medium flex-grow">
+        <label class="text-[#344054] text-[14px]" for="lastName"
+          >Last name</label
+        >
+        <input
+          class="border border-solid border-[#D0D5DD] rounded-lg py-[12px] px-[16px] shadow-none text-[16px] max-w-[224px] mob:max-w-[unset]"
+          pInputText
+          placeholder="Last name"
+          id="username"
+          aria-describedby="lastName-help"
+          [(ngModel)]="formValues.lastName"
+        />
+      </div>
+    </div>
+    <div class="flex flex-column gap-2 font-medium mt-[24px]">
+      <label class="text-[#344054] text-[14px]" for="email">Email</label>
+      <input
+        type="email"
+        class="border border-solid border-[#D0D5DD] rounded-lg py-[12px] px-[16px] shadow-none text-[16px]"
+        pInputText
+        placeholder="you@company.com"
+        id="email"
+        aria-describedby="email-help"
+        [(ngModel)]="formValues.email"
+      />
+    </div>
+    <div class="flex flex-column gap-2 font-medium mt-[24px]">
+      <label class="text-[#344054] text-[14px]" for="phoneNumber"
+        >Phone number</label
+      >
+      <div class="flex border border-solid border-[#D0D5DD] rounded-lg">
+        <div class="card flex justify-content-center country-dropdown">
+          <p-dropdown
+            [style]="{
+              outline: 'none',
+              'box-shadow': 'none'
+            }"
+            [options]="countries"
+            [(ngModel)]="formValues.country"
+            optionLabel="code"
+          ></p-dropdown>
+        </div>
+        <input
+          type="number"
+          class="py-[12px] px-[16px] shadow-none text-[16px] flex-grow appearance-none"
+          pInputText
+          placeholder="+1 (555) 000-0000"
+          id="phoneNumber"
+          aria-describedby="phoneNumber-help"
+          [(ngModel)]="formValues.number"
+        />
+      </div>
+    </div>
+    <div class="flex flex-column gap-2 font-medium mt-[24px]">
+      <label class="text-[#344054] text-[14px]" for="Message">Message</label>
+      <textarea
+        class="border border-solid border-[#D0D5DD] px-[14px] py-[10px] rounded-lg resize-none shadow-none outline-none"
+        rows="5"
+        cols="30"
+        pInputTextarea
+        [(ngModel)]="formValues.message"
+      ></textarea>
+    </div>
+    <div class="mt-[24px] flex gap-[12px] items-center">
+      <p-checkbox
+        [ngClass]="{
+          'border border-solid border-[#D0D5DD] rounded-md':
+            !formValues.agreement
+        }"
+        [style]="{
+          outline: 'none',
+          'box-shadow': 'none'
+        }"
+        class="!shadow-none !outline-none w-[24px] h-[24px]"
+        [binary]="true"
+        inputId="binary"
+        [(ngModel)]="formValues.agreement"
+      ></p-checkbox>
+      <p>
+        You agree to our friendly
+        <a href="#" class="underline">privacy policy</a>.
+      </p>
+    </div>
+    <div class="card flex justify-content-center mt-[32px] h-[48px]">
+      <p-button
+        class="w-full h-full"
+        [style]="{
+          width: '100%',
+          'background-color': '#7F56D9',
+          height: '100%',
+          color: '#FFFFFF',
+          'font-size': '16px',
+          'font-weight': '600',
+          'box-shadow': 'none',
+          outline: 'none'
+        }"
+        label="Send message"
+      ></p-button>
+    </div>
+  </div>
+  <div class="flex-grow w-[50%] mob:hidden">
+    <img
+      class="h-full w-full"
+      [src]="imagePath + '1f12d9073d3f9127a869fdd43a0069f2.jfif'"
+    />
+  </div>
+</section>

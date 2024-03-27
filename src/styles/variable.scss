@@ -1,0 +1,9 @@
+html[theme="dark"] {
+  --bgColor: blue;
+  --textColor: white;
+}
+
+html[theme="light"] {
+  --bgColor: yellow;
+  --textColor: red;
+}
